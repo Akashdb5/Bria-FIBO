@@ -178,6 +178,54 @@ const Login = () => {
             >
               {isLoading ? 'Signing in...' : 'Sign in'}
             </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">
+                  Or continue with
+                </span>
+              </div>
+            </div>
+
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full"
+              disabled={isLoading}
+              onClick={() => {
+                setFormData({
+                  email: 'birajdarakash98@gmail.com',
+                  password: 'Birajdarakash98@'
+                })
+                // We need to wait for state update before submitting, so we'll just fill for now
+                // or we can directly call login
+                login('birajdarakash98@gmail.com', 'Birajdarakash98@')
+                  .then(() => {
+                    toast({
+                      title: "Success",
+                      description: "You have been logged in successfully.",
+                    })
+                  })
+                  .catch((error) => {
+                    // Error handling logic similar to handleSubmit
+                    console.error('Login error:', error)
+                    let errorMessage = 'An unexpected error occurred.'
+                    if (error instanceof AxiosError && error.response?.data?.detail) {
+                      errorMessage = error.response.data.detail
+                    }
+                    toast({
+                      variant: "destructive",
+                      title: "Login Failed",
+                      description: errorMessage,
+                    })
+                  })
+              }}
+            >
+              Demo User
+            </Button>
           </form>
 
           <div className="mt-6 text-center">

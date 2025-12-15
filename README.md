@@ -173,6 +173,8 @@ VITE_APP_NAME=Bria Workflow Platform
 
 ## 🚀 Running the Application
 
+> **Note:** This application is deployed on Render's free tier. The server may go to sleep after periods of inactivity, causing the first request to take 50-60 seconds to load. Please be patient while the server wakes up.
+
 ### Development Mode
 
 1. **Backend API**: `http://localhost:8000`
