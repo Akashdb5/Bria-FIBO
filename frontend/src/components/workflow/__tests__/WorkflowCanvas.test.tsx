@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { ReactFlowProvider } from 'reactflow'
 import WorkflowCanvas from '../WorkflowCanvas'
-import { CustomNodeData } from '../CustomNode'
 
 // Mock ReactFlow components
 vi.mock('reactflow', async () => {

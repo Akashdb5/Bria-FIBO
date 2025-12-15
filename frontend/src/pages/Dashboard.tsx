@@ -16,8 +16,7 @@ import {
   Pause,
   Eye,
   Image as ImageIcon,
-  Plus,
-  Workflow as WorkflowIcon
+  Plus
 } from 'lucide-react'
 import { workflowRunAPI } from '@/lib/api'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
